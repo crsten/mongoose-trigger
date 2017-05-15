@@ -74,7 +74,7 @@ module.exports = exports = function MongooseTrigger(schema, options) {
       .catch(err => console.error('[ERROR] -> mongoose-trigger -> ', err))
     }
 
-    if(this.modifiedPartials) {
+    if(!this.wasNew && this.modifiedPartials) {
       options.partials
         .filter(partial => Intersect(partial.triggers.split(' '), this.modifiedPartials).length)
         .forEach(partial => {
