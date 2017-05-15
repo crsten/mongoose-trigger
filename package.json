@@ -1,14 +1,17 @@
 {
   "name": "mongoose-trigger",
-  "version": "1.0.0",
+  "version": "0.0.0-development",
   "description": "Library to listen to events in mongoose",
   "main": "src/",
   "scripts": {
-    "test": "echo \"No tests yet\""
+    "test": "echo \"No tests yet\"",
+    "dev": "node test/index",
+    "commit": "git-cz",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/crsten/mongoose-trigger.git"
+    "url": "https://github.com/crsten/mongoose-trigger.git"
   },
   "keywords": [
     "mongoose",
@@ -26,11 +29,15 @@
     "cz-conventional-changelog": "^2.0.0",
     "express": "^4.15.2",
     "mongoose": "^4.9.6",
-    "semantic-release": "^6.3.2",
-    "mongoose": "^4.9.6"
+    "semantic-release": "^6.3.6"
   },
   "dependencies": {
     "cli-color": "^1.2.0",
     "intersect": "^1.0.1"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
