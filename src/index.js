@@ -101,7 +101,7 @@ module.exports = exports = function MongooseTrigger(schema, options) {
     if(options.events.remove) {
       let EventName = 'remove' ;
 
-      Emitter({ _id: this._id}, {
+      Emitter(this, {
         eventName: EventName,
         debug: options.debug
       }, emitter);
